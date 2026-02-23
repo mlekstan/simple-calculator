@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (console)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "dotnet: build",
+      "program": "${workspaceFolder}/swi/bin/Debug/net6.0/swi.dll",
+      "args": ["${workspaceFolder}/swi/input.json"],
+      "cwd": "${workspaceFolder}/swi",
+      "console": "internalConsole",
+      "stopAtEntry": false
+    }
+  ]
+}
