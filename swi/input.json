@@ -1,11 +1,22 @@
 {
-  "obj1": {
+  "Proste_Dodawanie": {
     "operator": "add",
-    "value1": 2,
-    "value2": 3
+    "value1": 3434,
+    "value2": null
   },
-  "obj2": {
+  "z": {
+    "operator": "sub",
+    "value1": 4,
+    "value2": 25
+  },
+  "x": {
+    "operator": "mul",
+    "value1": 9.99,
+    "value2": 9.99
+  },
+  "Dzielenie_Z_Ignorowanym_Polem": {
     "operator": "sqrt",
-    "value1": 16
+    "value1": 0,
+    "komentarz": "To pole zostanie po cichu zignorowane przez parser, bo nie ma go w DTO"
   }
 }

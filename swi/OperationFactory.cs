@@ -10,11 +10,11 @@ class OperationFactory
 
   public Operation CreateOperation(OperationDto operationDto)
   {
-    if (this._decisionDict.TryGetValue(operationDto.Operator, out Func<OperationDto, Operation> create))
+    if (_decisionDict.TryGetValue(operationDto.Operator, out Func<OperationDto, Operation>? create))
     {
       return create(operationDto);
     }
 
-    throw new Exception($"Operacja {operationDto.Operator} nie istnieje.");
+    throw new NotSupportedException($"Operacja {operationDto.Operator} nie istnieje.");
   }
 }

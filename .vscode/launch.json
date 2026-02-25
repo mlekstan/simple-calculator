@@ -7,7 +7,7 @@
       "request": "launch",
       "preLaunchTask": "dotnet: build",
       "program": "${workspaceFolder}/swi/bin/Debug/net6.0/swi.dll",
-      "args": ["${workspaceFolder}/swi/input.json"],
+      // "args": ["${workspaceFolder}/swi/input.json"],
       "cwd": "${workspaceFolder}/swi",
       "console": "internalConsole",
       "stopAtEntry": false

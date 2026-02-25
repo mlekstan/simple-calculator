@@ -1,6 +1,6 @@
 abstract class Operation : OperationDto, IComparable
 {
-  protected double Result;
+  public double Result = double.MinValue;
   public Operation(OperationDto operationDto) : base()
   {
     Operator = operationDto.Operator;
@@ -13,8 +13,7 @@ abstract class Operation : OperationDto, IComparable
   {
     if (obj == null) return 1;
 
-    var operation = obj as Operation;
-    if (operation != null)
+    if (obj is Operation operation)
       return Result.CompareTo(operation.Result);
     else
       throw new Exception("Object is not a Operation");
@@ -23,7 +22,7 @@ abstract class Operation : OperationDto, IComparable
   {
     if (double.IsNaN(value) || double.IsInfinity(value))
     {
-      throw new Exception(message);
+      throw new InvalidOperationException(message);
     }   
   }
 }
@@ -36,11 +35,11 @@ class Addition : Operation
   {
     if (Value2 == null)
     {
-      throw new Exception("Wymagane są dwa operandy.");
+      throw new InvalidOperationException("Two operands are required: 'value1', 'value2'.");
     }
 
-    var result = Value1.Value + Value2.Value;
-    CheckValue(result, "Wartości operndów muszą być liczbami.");
+    var result = Value1 + Value2.Value;
+    CheckValue(result, "Values of operands must be numbers.");
     Result = result;
   }
 }
@@ -52,11 +51,11 @@ class Subtraction : Operation
   {
     if (Value2 == null)
     {
-      throw new Exception("Wymagane są dwa operandy.");
+      throw new InvalidOperationException("Two operands are required: 'value1', 'value2'.");
     }
 
-    var result = Value1.Value - Value2.Value;
-    CheckValue(result, "Wartości operndów muszą być liczbami.");
+    var result = Value1 - Value2.Value;
+    CheckValue(result, "Values of operands must be numbers.");
     Result = result;
   }
 }
@@ -68,11 +67,11 @@ class Multiplication : Operation
   {
     if (Value2 == null)
     {
-      throw new Exception("Wymagane są dwa operandy.");
+      throw new InvalidOperationException("Two operands are required: 'value1', 'value2'.");
     }
 
-    var result = Value1.Value * Value2.Value;
-    CheckValue(result, "Wartości operndów muszą być liczbami.");
+    var result = Value1 * Value2.Value;
+    CheckValue(result, "Values of operands must be numbers.");
     Result = result;
   }
 }
@@ -82,8 +81,8 @@ class SquareRoot : Operation
   public SquareRoot(OperationDto operationDto) : base(operationDto) {}
   public override void Execute()
   {
-    var result = Math.Sqrt(Value1.Value);
-    CheckValue(result, "Wartość operandu musi być liczbą większą od 0.");
+    var result = Math.Sqrt(Value1);
+    CheckValue(result, "Value of operand 'value1' must be at least 0.");
     Result = result;
   }
 }

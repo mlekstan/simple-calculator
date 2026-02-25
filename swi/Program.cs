@@ -1,45 +1,65 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Globalization;
+using System.Text.Json;
 
+var INPUT_FILE_PATH = @"./input.json";
+var OUTPUT_FILE_PATH = @"./output.txt";
+
+CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
+
+Dictionary<string, OperationDto> inputDict;
 
 try
 {
-  string jsonText = File.ReadAllText(args[0]);
-  var inputDict = JsonSerializer.Deserialize<Dictionary<string, OperationDto>>(jsonText);
-  var operationFactory = new OperationFactory();
-  List<Operation> executedOperationsList = new(); 
-  
-
-  foreach(var entry in inputDict)
-  {
-    OperationDto operationDto = entry.Value;
-    operationDto.Name = entry.Key;
-
-    try
-    {
-      var operation = operationFactory.CreateOperation(operationDto);
-      operation.Execute();
-      executedOperationsList.Add(operation);      
-    }
-    catch (Exception e)
-    {
-      Console.WriteLine($"Błąd. Lokalizacja: {operationDto.Name}. Treść: {e.Message}");
-    }
-  }
-
-  executedOperationsList.Sort();
-
-} 
+  string jsonText = File.ReadAllText((args.Length == 1) ? args[0] : INPUT_FILE_PATH);
+  inputDict = JsonSerializer.Deserialize<Dictionary<string, OperationDto>>(jsonText)
+    ?? throw new JsonException("JSON deserialization result is null.");
+}
+catch (FileNotFoundException e)
+{
+  Console.WriteLine("File not found. {0}", e.Message);
+  return;
+}
+catch (JsonException e)
+{
+  Console.WriteLine("Incorrect JSON format. {0}", e.Message);
+  return;
+}
 catch (Exception e)
 {
-  Console.Write("Nieprawidłowy format danych wejściowych {0}", e);
+  Console.WriteLine("Unexpected error occured. {0}", e.Message);
+  return;
 }
 
+var operationFactory = new OperationFactory();
+List<Operation> executedOperationsList = new(); 
 
-enum OperatorType : ushort
+foreach(var entry in inputDict)
 {
-  [JsonPropertyName("add")] add, 
-  [JsonPropertyName("sub")] sub,
-  [JsonPropertyName("mul")] mul, 
-  [JsonPropertyName("sqrt")] sqrt
+  var operationDto = entry.Value;
+  operationDto.Name = entry.Key;
+
+  try
+  {
+    var operation = operationFactory.CreateOperation(operationDto);
+    operation.Execute();
+    executedOperationsList.Add(operation);      
+  }
+  catch (Exception e)
+  {
+    Console.WriteLine($"Name of JSON object in which error occured: '{operationDto.Name}'. Content: {e.Message}");
+    return;
+  }
 }
+
+executedOperationsList.Sort();
+
+using (StreamWriter sw = File.CreateText(OUTPUT_FILE_PATH))
+{
+  foreach (var operation in executedOperationsList)
+  {
+    sw.WriteLine($"{operation.Name}: {operation.Result}");
+  }
+}
+
+Console.ReadKey();
