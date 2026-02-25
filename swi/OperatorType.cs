@@ -1,6 +1,8 @@
 using System.Text.Json.Serialization;
 
-enum OperatorType : ushort
+namespace swi;
+
+public enum OperatorType : ushort
 {
   [JsonPropertyName("add")] add, 
   [JsonPropertyName("sub")] sub,

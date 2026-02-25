@@ -1,4 +1,6 @@
-abstract class Operation : OperationDto, IComparable
+namespace swi;
+
+public abstract class Operation : OperationDto, IComparable
 {
   public double Result = double.MinValue;
   public Operation(OperationDto operationDto) : base()
@@ -27,7 +29,7 @@ abstract class Operation : OperationDto, IComparable
   }
 }
 
-class Addition : Operation
+public class Addition : Operation
 {
   public Addition(OperationDto operationDto) : base(operationDto) {}
   
@@ -44,7 +46,7 @@ class Addition : Operation
   }
 }
 
-class Subtraction : Operation
+public class Subtraction : Operation
 {
   public Subtraction(OperationDto operationDto) : base(operationDto) {}
   public override void Execute()
@@ -60,7 +62,7 @@ class Subtraction : Operation
   }
 }
 
-class Multiplication : Operation
+public class Multiplication : Operation
 {
   public Multiplication(OperationDto operationDto) : base(operationDto) {}
   public override void Execute()
@@ -76,7 +78,7 @@ class Multiplication : Operation
   }
 }
 
-class SquareRoot : Operation
+public class SquareRoot : Operation
 {
   public SquareRoot(OperationDto operationDto) : base(operationDto) {}
   public override void Execute()

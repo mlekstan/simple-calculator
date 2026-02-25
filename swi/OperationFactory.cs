@@ -1,4 +1,6 @@
-class OperationFactory
+namespace swi;
+
+public class OperationFactory
 {
   private readonly Dictionary<OperatorType, Func<OperationDto, Operation>> _decisionDict = new()
   {

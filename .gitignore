@@ -1,3 +1,5 @@
 input.json
 readme.txt
 output.txt
+bin/
+obj/

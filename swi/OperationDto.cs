@@ -1,6 +1,9 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-class OperationDto
+
+namespace swi;
+
+public class OperationDto
 {
   [JsonConverter(typeof(JsonStringEnumConverter))]
   [JsonPropertyName("operator")]
