@@ -1,0 +1,140 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Studia_Teleinformatyka_2022_2023\\Praktyki\\SolarWinds\\Intern – Software Engineer-202204\\simple-calculator\\swi.Tests\\swi.Tests.csproj": {}
+  },
+  "projects": {
+    "E:\\Studia_Teleinformatyka_2022_2023\\Praktyki\\SolarWinds\\Intern – Software Engineer-202204\\simple-calculator\\swi.Tests\\swi.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Studia_Teleinformatyka_2022_2023\\Praktyki\\SolarWinds\\Intern – Software Engineer-202204\\simple-calculator\\swi.Tests\\swi.Tests.csproj",
+        "projectName": "swi.Tests",
+        "projectPath": "E:\\Studia_Teleinformatyka_2022_2023\\Praktyki\\SolarWinds\\Intern – Software Engineer-202204\\simple-calculator\\swi.Tests\\swi.Tests.csproj",
+        "packagesPath": "C:\\Users\\Michal\\.nuget\\packages\\",
+        "outputPath": "E:\\Studia_Teleinformatyka_2022_2023\\Praktyki\\SolarWinds\\Intern – Software Engineer-202204\\simple-calculator\\swi.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Michal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\Studia_Teleinformatyka_2022_2023\\Praktyki\\SolarWinds\\Intern – Software Engineer-202204\\simple-calculator\\swi\\swi.csproj": {
+                "projectPath": "E:\\Studia_Teleinformatyka_2022_2023\\Praktyki\\SolarWinds\\Intern – Software Engineer-202204\\simple-calculator\\swi\\swi.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Studia_Teleinformatyka_2022_2023\\Praktyki\\SolarWinds\\Intern – Software Engineer-202204\\simple-calculator\\swi\\swi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Studia_Teleinformatyka_2022_2023\\Praktyki\\SolarWinds\\Intern – Software Engineer-202204\\simple-calculator\\swi\\swi.csproj",
+        "projectName": "swi",
+        "projectPath": "E:\\Studia_Teleinformatyka_2022_2023\\Praktyki\\SolarWinds\\Intern – Software Engineer-202204\\simple-calculator\\swi\\swi.csproj",
+        "packagesPath": "C:\\Users\\Michal\\.nuget\\packages\\",
+        "outputPath": "E:\\Studia_Teleinformatyka_2022_2023\\Praktyki\\SolarWinds\\Intern – Software Engineer-202204\\simple-calculator\\swi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Michal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
