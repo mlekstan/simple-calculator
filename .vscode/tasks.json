@@ -1,17 +1,17 @@
 {
 	"version": "2.0.0",
 	"tasks": [
-			{
-				"label": "buid",
-				"command": "dotnet",
-				"type": "process",
-				"args": [
-						"build",
-						"${workspaceFolder}/swi/swi.csproj",
-						"/property:GenerateFullPaths=true",
-						"/consoleloggerparameters:NoSummary"
-				],
-				"problemMatcher": "$msCompile"
-			}
+		{
+			"label": "buid",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"build",
+				"${workspaceFolder}/swi/swi.csproj",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary"
+			],
+			"problemMatcher": "$msCompile"
+		}
   ]
 }

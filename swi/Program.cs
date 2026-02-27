@@ -64,4 +64,15 @@ using (StreamWriter sw = File.CreateText(OUTPUT_FILE_PATH))
   }
 }
 
-Console.ReadKey();
+using (StreamWriter sw = File.CreateText(OUTPUT_FILE_PATH))
+{
+  for (int i = 0; i < executedOperationsList.Count; i++)
+  {
+    var operation = executedOperationsList[i];
+    
+    if (i > 0) 
+      sw.WriteLine(); 
+    
+    sw.Write($"{operation.Name}: {operation.Result}");
+  }
+}
